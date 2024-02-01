@@ -1,4 +1,4 @@
-
+import java.util.Arrays;
 
 public class ArrayExamples {
 
@@ -24,18 +24,37 @@ public class ArrayExamples {
   // lowest number when calculating. Returns 0 if there are no elements or just
   // 1 element in the array
   static double averageWithoutLowest(double[] arr) {
+    if(arr == null){
+      throw new NullPointerException("error msg");
+    }
     if(arr.length < 2) { return 0.0; }
+    
     double lowest = arr[0];
     for(double num: arr) {
       if(num < lowest) { lowest = num; }
     }
     double sum = 0;
-    for(double num: arr) {
+    for(int i = 0; i < arr.length; i++){
+      sum += arr[i];
+    }
+    sum -= lowest;
+    return sum / (arr.length - 1);
+  /*   for(double num: arr) {
       if(num != lowest) { sum += num; }
     }
     return sum / (arr.length - 1);
+    }
+    
+    Arrays.sort(arr);
+    double sum = 0.0;
+    for(int i = 1; i < arr.length; i++){
+      sum += arr[i];
+    }
+    return sum/(arr.length -1);
+    */
   }
-
+   
+    
 
 }
 
