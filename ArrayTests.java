@@ -57,4 +57,7 @@ public class ArrayTests {
     }
    // assertEquals(0.0, ArrayExamples.averageWithoutLowest(input1), 0.1);
   }
+
+  //@Test 
+  //public void test
 }
